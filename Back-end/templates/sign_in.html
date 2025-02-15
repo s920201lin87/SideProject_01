@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>會員登入</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+    <div class="login-container">
+        <h1>會員登入</h1>
+        <form class="login-form" action="/sign_in_info" method="POST">
+
+            <label for="Email">Member Email :</label>
+            <input type="text" id="Email" name="email" />
+
+            <label for="memberPwd">Member Password :</label>
+            <input type="password" id="Pwd" name="pwd" />
+
+            <button>Sign In</button>
+            
+        </form>
+        <br>
+        <a href="/register">Register</a>
+    </div>
+    
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員註冊</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+        
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>
+            會員註冊
+        </h2>
+        <form action="/register_info" class="login-form" method="POST">
+            Name:<input type="text" name="name">
+            Email:<input type="text" name="email">
+            Password:<input type="password" name="pwd">
+            <!-- Password 確認:<input type="password" name="pwdConfirm"> -->
+            <button>Go Register !</button>
+        </form>
+    </div>
+</body>
+</html>
