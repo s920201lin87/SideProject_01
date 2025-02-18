@@ -50,7 +50,7 @@ def sign_in_info():
     
     # 如果都正確，就把使用者資訊存入 session，導向首頁或個人頁面
     session["userName"] = result["name"]
-    return redirect("/")
+    return redirect("/member")
     
 #取得會員註冊資料
 @app.route("/register_info",methods= ["POST"])
@@ -80,4 +80,18 @@ def register_info():
 def sign_in_error():
     return render_template("sign_in_error.html")
 
-app.run(port=7777)
+
+@app.route("/member")
+def member_login():
+    if "userName" in session:
+        return render_template("member.html", name=session["userName"])
+    else:
+        return redirect("/sign_in")
+
+@app.route("/log_out")
+def log_out():
+    session.clear()
+    return redirect("/")
+
+if __name__ == "__main__":
+    app.run(debug=True,port= 7890)
